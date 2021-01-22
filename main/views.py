@@ -123,3 +123,23 @@ def guInfoCreate(request):
     #         print(dongList)
 
     return render(request, "guSelect.html", {"guInfo":gu_dict})
+
+def get_id(address):
+    url = 'https://dapi.kakao.com/v2/local/search/address.json?&query=' + str(address)
+    result = requests.get(urlparse(url).geturl(), headers={'Authorization': 'KakaoAK 10faa6da25b75ef0a75b555ae4e5d64e'}).json()
+    match_first = result['documents'][0]['address']
+
+    lat = float(match_first['y'])
+    lng = float(match_first['x'])
+
+    return [lat, lng]
+
+def get_scatterplot(address):
+
+    trace = go.Scatter(x=[get_id(address)[0]], y = [get_id(address)[1]], mode='markers', marker=dict(size=9, color='#ff9f43', symbol=18 ))
+
+    data = park
+    fig = go.Figure()
+    fig = px.scatter(data, x="lat", y="lng", size="park_area", hover_name="name", size_max=60, range_x=[get_id(address)[0]-0.01,get_id(address)[0]+0.01], range_y=[get_id(address)[1]-0.04,get_id(address)[1]+0.04])
+
+    return fig.add_trace(trace)
