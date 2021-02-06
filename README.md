@@ -41,6 +41,7 @@
 * **function : price_pred(x1, x2,x3,x4, x5=77.95, x6=0,x7=0,x8=0,x9=9,x10=1998)**   
   * 'transaction_year' : x1, 'transaction_month' : x2, 'dong_enc' : x3, 'apt_name_enc' : x4, 'use_area(m2)' : x5, 'date(1\~10)' : x6, 'date(11\~20)' : x7, 'date(21~)' : x8, 'floor' : x9, 'year_found' : x10
 ## 아파트 주변 공원 시각화 모델 
+* parkWithLatLng_after.csv : Selenium, chromedriver 이용하여 카카오맵에서 공원 이름으로 주소 크롤링 한 뒤, 카카오 지도api 이용하여 주소로 위도, 경도 값 추출   
 
 
 
