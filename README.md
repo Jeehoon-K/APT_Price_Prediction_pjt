@@ -1,8 +1,8 @@
 # YBigta 학회 DA팀 2021 겨울방학 프로젝트
 ## Members
-  * 김형준 Joon-Kim-Lang    
-  * 최은솔   
-  * 김지훈 Jeehoon-K 
+  * 김형준 (https://github.com/Joon-Kim-Lang)    
+  * 최은솔 (https://github.com/solthe)   
+  * 김지훈 (https://github.com/Jeehoon-K) 
 # Seoul Apartment price prediction project
 
 # About
