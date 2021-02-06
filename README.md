@@ -19,8 +19,8 @@
 # Overall Flow
 ![image](https://user-images.githubusercontent.com/61021101/106378798-ca274380-63ea-11eb-931a-56a303b5b3a6.png)
 
-# data Processing & Analysis
-
+# Data Processing & Analysis
+## 아파트 실거래가 분석모델
 ![image](https://user-images.githubusercontent.com/61021101/106378867-589bc500-63eb-11eb-970d-c880cc66b5ca.png)
 * **data processing**   
   * 'transaction_day' : 'date(1\~10)','date(11\~20)','date(21~)'로 one-hot encoding   
@@ -40,6 +40,9 @@
      
 * **function : price_pred(x1, x2,x3,x4, x5=77.95, x6=0,x7=0,x8=0,x9=9,x10=1998)**   
   * 'transaction_year' : x1, 'transaction_month' : x2, 'dong_enc' : x3, 'apt_name_enc' : x4, 'use_area(m2)' : x5, 'date(1\~10)' : x6, 'date(11\~20)' : x7, 'date(21~)' : x8, 'floor' : x9, 'year_found' : x10
+## 아파트 주변 공원 시각화 모델 
+
+
 
 # Backend Process
 
