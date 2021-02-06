@@ -40,9 +40,14 @@
      
 * **function : price_pred(x1, x2,x3,x4, x5=77.95, x6=0,x7=0,x8=0,x9=9,x10=1998)**   
   * 'transaction_year' : x1, 'transaction_month' : x2, 'dong_enc' : x3, 'apt_name_enc' : x4, 'use_area(m2)' : x5, 'date(1\~10)' : x6, 'date(11\~20)' : x7, 'date(21~)' : x8, 'floor' : x9, 'year_found' : x10
-## 아파트 주변 공원 시각화 모델 
-* parkWithLatLng_after.csv : Selenium, chromedriver 이용하여 카카오맵에서 공원 이름으로 주소 크롤링 한 뒤, 카카오 지도api 이용하여 주소로 위도, 경도 값 추출   
-
+## 아파트 주변 공원 시각화 모델    
+![image](https://user-images.githubusercontent.com/67865191/107124336-b0a06300-68e6-11eb-9aec-3f675b9dd904.PNG)
+* parkWithLatLng_after.csv : Selenium, chromedriver 이용하여 카카오맵에서 공원 이름으로 도로명 주소 크롤링 한 뒤, 카카오 지도api 이용하여 주소로 위도, 경도 값 추출   
+ * 원래의 park.csv 데이터에서 'city'+'gu'+'dong'+'park_name'+'park_type'을 이용하여 정확한 도로명 주소를 크롤링 한 것이기 때문에 검색이 안되는 경우도 있었음, 'city'+'gu'+'dong'+'park_name' 으로 한번 더 크롤링 후 위의 경우에 겹쳐줌. -> 최종 결측치 166개   
+* **function**
+ * id(name) : 카카오지도api를 이용하여 사용자가 아파트 이름을 입력하면 자동으로 apt_address.csv에 있는 주소로 변환 후 위도와 경도 반환
+ * get_close_index(apt_name) : haversine 라이브러리를 이용하여 입력한 아파트의 위도, 경도와 모든 공원들의 위도, 경도간 거리를 계산 후 500m 이하의 공원 인덱스를 반환해줌
+ * get_map(address) : 위의 함수들을 이용하여 최종적으로 밑과 같은 plotly를 활용한 시각화 지도를 반환해줌
 
 
 # Backend Process
