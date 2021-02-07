@@ -52,14 +52,74 @@
 * time function으로 재본 주소 입력부터 지도 시각화가 뜨기까지의 평균 시간 **약 15초**
 # Backend Process
 
-![image](https://user-images.githubusercontent.com/61021101/106378904-98fb4300-63eb-11eb-9d4f-0d1c3be15d13.png)
+ * 시각화 자료를 보여주고 가격 예측 서비스를 제공하는 웹 서비스의 백엔드는 장고 프레임워크를 사용했고, 장고 템플릿 및 폼태그를 이용하여
+  POST 방식을 통해 사용자로부터 입력정보를 받고 처리된 데이터가 알맞게 보여지도록 구현함.
+  
+ ### 웹페이지 기능 flowchart
+ <img src = "https://user-images.githubusercontent.com/61021101/106378904-98fb4300-63eb-11eb-9d4f-0d1c3be15d13.png" width="80%">
+
+1. 서버 실행 & 예측모델 작동
+ 서버가 실행되고, 사용자가 웹 사이트 메인 url을 호출하게 되면 전처리 자료와 예측 모델 코드를 사용하여 아파트 예측 서비스를 제공할 수 있는
+상태로 준비가 되고, 해당 프로세스가 종료된 후 사이트의 메인 페이지로 이동하게 된다.
+
+2. 메인 페이지
+ 메인 페이지는 여러 가지의 섹션으로 구분되어 있고, 각 섹션 별로 프로젝트 소개, 데이터 시각화 자료를 보여주는 구간이 있다.
+해당 프로젝트에서 백엔드 기능은 가격 예측 서비스를 구현하는데 주로 초점이 맞추어져 있다.
+
+3. 가격예측기능
+<img src = "https://user-images.githubusercontent.com/61021101/107135982-add35b80-6942-11eb-9cfe-7f7f044a21c0.png" width="80%">
+
+* 다음과 같은 뷰 함수를 통해 사용자로부터 각종 입력값을 제공받으며, 모든 입력값을 받은 후에 모델이 예축할 수 있는 값으로 매핑이 이루어진다.
+
+<img src = "https://user-images.githubusercontent.com/61021101/107136012-fdb22280-6942-11eb-969a-eb797a24596c.png" width="80%">
+
+* 예측이 성공적으로 이루어지게 되면 다음과 같이 메인페이지의 결과 섹션에서 예측값과 함께 주변 공원 시각화 데이터가 렌더링된다.
 
 # Frontend Process
 
 ![image](https://user-images.githubusercontent.com/61021101/106378946-d790fd80-63eb-11eb-8be6-7c44502134d7.png)
 
-# Result
-![image](https://user-images.githubusercontent.com/61021101/106378988-2048b680-63ec-11eb-893d-4bca470a1197.png)
+* **목표**: 예측 기능을 넣은 간단한 인터렉티브 웹페이지를 제작
 
-# Reference
+  - **JavaScript**: [ScrollReveal.js](https://scrollrevealjs.org/) 사용 스크롤 동작 추가
+  - **HTML**: 예측 기능, 시각화 그래프 임베딩 **CSS**: 지도 그래프와 통일한 테마로 디자인 통일
+  - **Key Features**: 아파트가 예측, 데이터 시각화
 
+# Website Overview
+
+* 크게 세 섹션으로 분류
+
+### 섹션 1: 프로젝트 소개
+
+* 홈페이지와 동별 가격 지도화
+
+* 프로젝트 소개글
+
+<img src = "https://user-images.githubusercontent.com/69390011/107136960-1fafa300-694b-11eb-9d31-fce0b160d88e.png" width = 60%>
+<img src = "https://user-images.githubusercontent.com/69390011/107137054-0eb36180-694c-11eb-9afa-551abe7ecb86.png" width = 60%>
+
+### 섹션 2: 예측 
+
+* **구 선택**
+<img src = "https://user-images.githubusercontent.com/69390011/107136802-b54a3300-6949-11eb-8931-f5e0084bcb55.png" width = 60%>
+
+* **동 선택**
+<img src = "https://user-images.githubusercontent.com/69390011/107136801-b4b19c80-6949-11eb-9545-d384f749d077.png" width = 60%>
+
+* **아파트 선택**
+<img src = "https://user-images.githubusercontent.com/69390011/107136800-b4b19c80-6949-11eb-9d5b-94dd8b3aee56.png" width = 60%>
+
+* **평수 및 날짜 선택**
+<img src = "https://user-images.githubusercontent.com/69390011/107136798-b4190600-6949-11eb-8e68-25ae643682c6.png" width = 60%>
+
+* **예측 결과**
+<img src = "https://user-images.githubusercontent.com/69390011/107136982-5ab1d680-694b-11eb-8e7b-984b88db1c3e.png" width = 60%>
+
+### 섹션 3: 시각화/분석
+
+* 동별 가격 추이
+
+* 서대문구 건축연도별 가격 추이
+
+<img src = "https://user-images.githubusercontent.com/69390011/107136804-b67b6000-6949-11eb-902f-aa05bc6f8652.png" width = 60%>
+<img src = "https://user-images.githubusercontent.com/69390011/107136803-b5e2c980-6949-11eb-9a77-cac5de6066c7.png" width = 60%>
